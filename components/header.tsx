@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -13,7 +14,15 @@ export function Header() {
       <nav className="max-w-7xl mx-auto bg-background/80 backdrop-blur-md border border-border/50 rounded-3xl ">
         <div className="flex items-center justify-between h-20 px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-2">
-            <span className="font-serif text-foreground text-2xl font-normal">Webbeesolutions</span>
+            <div className="relative w-10 h-10 md:w-16 md:h-16">
+               <Image 
+                 src="/favicon.png" 
+                 alt="Webbeesolutions Logo" 
+                 fill 
+                 className="object-contain"
+               />
+            </div>
+            
           </Link>
 
           <div className="hidden md:flex items-center gap-10">
