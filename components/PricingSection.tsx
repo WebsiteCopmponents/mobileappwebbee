@@ -1,15 +1,21 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { AnimatedText } from "@/components/animated-text"
+import { ScrollBlurText } from "./scroll-blur-text"
 
 export function PricingSection() {
   return (
     <section className="py-32 bg-[var(--surface-secondary)]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <AnimatedText text="Pricing" />
-        </div>
+        <div className="mb-20 lg:mb-24">
+                  <p className="reveal  text-sm uppercase tracking-[0.2em] text-secondary font-medium mb-4">
+                    Our Pricing
+                  </p>
+                  <ScrollBlurText
+                    text="Pricing"
+                    className="font-serif text-4xl md:text-5xl lg:text-7xl text-foreground text-balance mb-6 font-light"
+                  />
+                </div>
 
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
