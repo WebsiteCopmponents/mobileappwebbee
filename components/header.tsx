@@ -12,7 +12,7 @@ export function Header() {
   return (
     <header className="z-50 px-6 py-2 bg-white">
       <nav className="max-w-7xl mx-auto bg-background/80 backdrop-blur-md border border-border/50 rounded-3xl ">
-        <div className="flex items-center justify-between h-20 px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 md:h-20 px-4 lg:px-8">
           <Link href="/" className="flex items-center gap-2">
             <div className="relative w-10 h-10 md:w-16 md:h-16">
                <Image 
