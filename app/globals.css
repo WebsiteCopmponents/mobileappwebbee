@@ -1,0 +1,214 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Premium brand color palette - Purple/Indigo Focus */
+  /* Updated background to #F8F8F8 light gray */
+  --background: #f8f8f8;
+  --foreground: oklch(0.18 0.02 150); /* Near black */
+  --card: oklch(0.99 0.003 90);
+  --card-foreground: oklch(0.18 0.02 150);
+  --popover: oklch(0.99 0.003 90);
+  --popover-foreground: oklch(0.18 0.02 150);
+  /* Updated primary color from green to #6810FF vibrant purple */
+  --primary: #6810ff;
+  --primary-foreground: oklch(0.97 0.005 90);
+  /* Updated secondary to complement the purple */
+  --secondary: #7d3fd7;
+  --secondary-foreground: oklch(0.97 0.005 90);
+  --muted: oklch(0.92 0.01 90);
+  --muted-foreground: oklch(0.45 0.02 150);
+  /* Updated accent to work with purple theme */
+  --accent: #8b5cf6;
+  --accent-foreground: oklch(0.18 0.02 150);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.88 0.01 90);
+  --input: oklch(0.92 0.01 90);
+  /* Updated ring to match primary purple */
+  --ring: #6810ff;
+  --chart-1: #6810ff;
+  --chart-2: #7d3fd7;
+  --chart-3: #8b5cf6;
+  --chart-4: #a78bfa;
+  --chart-5: #c4b5fd;
+  --radius: 0.75rem;
+  --sidebar: oklch(0.97 0.005 90);
+  --sidebar-foreground: oklch(0.18 0.02 150);
+  --sidebar-primary: #6810ff;
+  --sidebar-primary-foreground: oklch(0.97 0.005 90);
+  --sidebar-accent: oklch(0.92 0.01 90);
+  --sidebar-accent-foreground: oklch(0.18 0.02 150);
+  --sidebar-border: oklch(0.88 0.01 90);
+  --sidebar-ring: #6810ff;
+}
+
+.dark {
+  --background: oklch(0.15 0.02 150);
+  --foreground: oklch(0.97 0.005 90);
+  --card: oklch(0.18 0.02 150);
+  --card-foreground: oklch(0.97 0.005 90);
+  --popover: oklch(0.18 0.02 150);
+  --popover-foreground: oklch(0.97 0.005 90);
+  --primary: #8b5cf6;
+  --primary-foreground: oklch(0.15 0.02 150);
+  --secondary: #a78bfa;
+  --secondary-foreground: oklch(0.97 0.005 90);
+  --muted: oklch(0.25 0.02 150);
+  --muted-foreground: oklch(0.65 0.02 90);
+  --accent: #c4b5fd;
+  --accent-foreground: oklch(0.97 0.005 90);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.28 0.02 150);
+  --input: oklch(0.28 0.02 150);
+  --ring: #a78bfa;
+  --chart-1: #8b5cf6;
+  --chart-2: #a78bfa;
+  --chart-3: #c4b5fd;
+  --chart-4: #ddd6fe;
+  --chart-5: #ede9fe;
+  --sidebar: oklch(0.18 0.02 150);
+  --sidebar-foreground: oklch(0.97 0.005 90);
+  --sidebar-primary: #8b5cf6;
+  --sidebar-primary-foreground: oklch(0.15 0.02 150);
+  --sidebar-accent: oklch(0.25 0.02 150);
+  --sidebar-accent-foreground: oklch(0.97 0.005 90);
+  --sidebar-border: oklch(0.28 0.02 150);
+  --sidebar-ring: #a78bfa;
+}
+
+@theme inline {
+  --font-sans: "DM Sans", "DM Sans Fallback";
+  --font-serif: "Fraunces", "Fraunces Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Surfaces */
+  --surface-primary: #ffffff;
+  --surface-secondary: #f8f9fb;
+  --surface-dark: #0b0d10;
+
+  /* Borders */
+  --border-subtle: #e6e8ec;
+
+  /* Text */
+  --text-primary: #0b0d10;
+  --text-secondary: #6b7280;
+  --text-inverse: #ffffff;
+
+  /* Radius */
+  --radius-card: 20px;
+
+  /* Elevation */
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Smooth scroll and animation utilities */
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out forwards;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+/* Added animation delay for carousel reveal */
+.animation-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+/* Adding zoom-in animation for hero image */
+@keyframes zoom-in {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.animate-zoom-in {
+  animation: zoom-in 1.2s ease-out forwards;
+}
+
+/* Hide scrollbar for carousel while maintaining scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
