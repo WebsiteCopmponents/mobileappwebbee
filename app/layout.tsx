@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { DM_Sans, Fraunces } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
+import MobileStickyBtn from '@/components/mobilestickybtn';
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -48,6 +49,7 @@ export default function RootLayout({
       <body className={`${dmSans.variable} ${fraunces.variable} font-sans antialiased`}>
         {children}
         <Analytics />
+        <MobileStickyBtn />
       </body>
     </html>
   )
