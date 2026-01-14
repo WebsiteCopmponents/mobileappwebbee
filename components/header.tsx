@@ -5,14 +5,15 @@ import Link from "next/link"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-btn";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <header className="z-50 px-6 py-2 bg-white">
-      <nav className="max-w-7xl mx-auto bg-background/80 backdrop-blur-md border border-border/50 rounded-3xl ">
-        <div className="flex items-center justify-between h-16 md:h-20 px-4 lg:px-8">
+      <nav className="max-w-7xl mx-auto ">
+        <div className="flex items-center justify-between h-16 md:h-20 md:px-4 px-0 lg:px-8">
           <Link href="/" className="flex items-center gap-2">
             <div className="relative w-10 h-10 md:w-16 md:h-16">
                <Image 
@@ -42,14 +43,17 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 py-6">
-              Get Started
-            </Button> 
+            <InteractiveHoverButton text="Get Started" />
           </div>
 
           {/* Mobile Menu Button */}
           <button className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-6 h-6" /> : (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                <line x1="4" x2="20" y1="9" y2="9" />
+                <line x1="4" x2="20" y1="15" y2="15" />
+              </svg>
+            )}
           </button>
         </div>
 
@@ -85,9 +89,7 @@ export function Header() {
               >
                 Contact
               </Link>
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full w-full mt-4 py-6">
-                Get Started
-              </Button>
+               <InteractiveHoverButton text="Get Started" />
             </div>
           </div>
         )}

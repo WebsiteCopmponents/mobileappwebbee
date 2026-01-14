@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { AnimatedText } from "@/components/animated-text"
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-btn";
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -107,14 +108,13 @@ export function HeroSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="rounded-full px-12 py-6 text-base group">
+              <Button size="lg" variant="outline" className="rounded-full px-14 py-6 text-base bg-primary text-white hover:text-primary-foreground">
                 Book a free consultation
-                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 ml-2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
               </Button>
-
-              <Button size="lg" variant="outline" className="rounded-full px-10 py-6 text-base bg-transparent hover:text-white">
-                See Pricing
-              </Button>
+              <InteractiveHoverButton className="md:w-56 w-full" text="View our Works" />
             </div>
           </div>
         </div>

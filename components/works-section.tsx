@@ -7,23 +7,31 @@ import { ScrollBlurText } from "@/components/scroll-blur-text"
 const projects = [
   {
     title: "FitFlow",
+    subtitle: "Health & Fitness",
     tags: ["Health & Fitness", "iOS & Android"],
     image: "/images/project-fitflow.jpg",
+    icon: "/icons/fitflow-icon.png",
   },
   {
     title: "ShopHub",
+    subtitle: "E-commerce App",
     tags: ["E-commerce", "Web App"],
     image: "/images/project-shophub.jpg",
+    icon: "/icons/shophub-icon.png",
   },
   {
     title: "MindWell",
+    subtitle: "Mental Wellness",
     tags: ["Wellness", "Cross-Platform"],
     image: "/images/project-mindwell.jpg",
+    icon: "/icons/mindwell-icon.png",
   },
   {
     title: "DevSync",
+    subtitle: "Project Management",
     tags: ["Project Management", "Collaboration"],
     image: "/images/project-devsync.jpg",
+    icon: "/icons/devsync-icon.png",
   },
 ]
 
@@ -75,52 +83,54 @@ export function WorksSection() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10">
-          {projects.map((project, index) => (
-            <div
-              key={project.title}
-              className={`reveal opacity-0 group cursor-pointer ${
-                index === 1
-                  ? "animation-delay-200"
-                  : index === 2
-                    ? "animation-delay-400"
-                    : index === 3
-                      ? "animation-delay-600"
-                      : ""
-              }`}
-            >
-              <div className="bg-muted rounded-3xl overflow-hidden mb-6 h-72 md:h-80 border border-border/50 group-hover:border-primary/30 transition-all duration-500">
+        {/* App Showcase Rail */}
+<div
+        className="
+          grid
+          grid-flow-col
+          auto-cols-[80%]
+          gap-6
+          overflow-x-auto
+          pb-4
+          scrollbar-hide
+
+          sm:auto-cols-[55%]
+          md:grid-flow-row
+          md:auto-cols-auto
+          md:grid-cols-2
+          lg:grid-cols-3
+          md:overflow-visible
+        "
+      >
+        {projects.map((project) => (
+          <div key={project.title} className="group cursor-pointer">
+            {/* Card */}
+            <div className="bg-[#F4F4F4] rounded-4xl p-6 transition-all duration-300 group-hover:shadow-xl">
+              <div className="relative aspect-[6/8] rounded-2xl overflow-hidden bg-black">
                 <img
-                  src={project.image || "/placeholder.svg?height=320&width=640&query=mobile app ui screenshot"}
+                  src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
               </div>
+            </div>
 
-              <div className="bg-white rounded-2xl p-6 border border-border/50 group-hover:border-primary/30 group-hover:shadow-xl transition-all duration-500">
-                <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-4 font-light group-hover:text-primary transition-colors">
+            {/* Meta */}
+            <div className="mt-4 flex items-center gap-3 pl-3">
+             
+              <div className="leading-tight">
+                <p className="font-medium text-foreground">
                   {project.title}
-                </h3>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs font-medium text-muted-foreground bg-muted px-3 py-1 rounded-full group-hover:bg-primary/10 group-hover:text-primary transition-colors"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <button className="text-primary hover:text-primary/80 transition-colors p-0 h-auto flex items-center gap-2 group/btn">
-                  View project
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </button>
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  {project.subtitle}
+                </p>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
+      </div>
+
       </div>
     </section>
   )
